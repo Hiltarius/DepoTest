@@ -1,0 +1,10 @@
+sources = gui_simple.cpp
+objets = $(sources:.cpp=.o)
+
+GUISimple :$(objets) 
+	g++ $^ -o $@ -lQtGui -lQtCore #chercher les librairies
+
+gui_simple.o : gui_simple.cpp
+	g++ -c $^ -I/usr/include/qt4/QtGui/ -I/usr/include/qt4/
+
+
